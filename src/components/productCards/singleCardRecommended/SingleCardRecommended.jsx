@@ -7,7 +7,7 @@ import '../singleCardRecommended/SingleCardRecommended.css';
 const SingleCardRecommended = ({ productProps }) => {
 
     const detail = () => {
-        window.open(`${process.env.REACT_APP_SERVER_BASE_URL}/detail/${productProps._id}`, "_blank", "noreferrer");
+        window.open(`/detail/${productProps._id}`, "_blank", "noreferrer");
     }
     return (
       <Card className='border-0 my-3' onClick={detail}>

@@ -1,0 +1,11 @@
+#card_container_image{
+    height: 60vh;
+    object-fit: cover;
+    overflow: hidden;
+}
+
+#card_image{
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+}

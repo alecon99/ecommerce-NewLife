@@ -18,7 +18,7 @@ const ProductCartCard = () => {
 
                 const detail = () => {
                     setShow(false);
-                    window.open(`/detail/${product.product.id}`, "_blank", "noreferrer");
+                    window.open(`${process.env.REACT_APP_SERVER_BASE_URL}/detail/${product.product.id}`, "_blank", "noreferrer");
                 }
 
                 return (

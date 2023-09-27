@@ -10,7 +10,7 @@ const SingleCard = ({ productProps }) => {
   const navigate = useNavigate();
 
   const detail = () => {
-    navigate(`/detail/${productProps._id}`);
+    navigate(`${process.env.REACT_APP_SERVER_BASE_URL}/detail/${productProps._id}`);
   }
   return (
     <Card className='border-0 my-3' onClick={detail}>

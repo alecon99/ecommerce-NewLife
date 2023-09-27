@@ -11,7 +11,7 @@ const CardsRecommended = ({ category }) => {
 
     useEffect(() => {
         getRecommendedProduct();
-    })
+    },[])
 
     const getRecommendedProduct = async () => {
         try {

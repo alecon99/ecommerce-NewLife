@@ -39,6 +39,11 @@ const CategoryButtons = () => {
                 <Button variant='transparent' className='mx-1 hover_link text-nowrap' onClick={() => getFilterProducts("Diffuser")}>| Diffuser |</Button>
                 <Button variant='transparent' className='mx-1 hover_link text-nowrap' onClick={() => getFilterProducts("Accessories")}>| Accessories |</Button>
             </div>
+            {reset ?
+                <div className='text-start fs-1'><span className='green'>|</span> {filter}</div>
+                :
+                null
+            }
         </div>
 
     )

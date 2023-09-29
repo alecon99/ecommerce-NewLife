@@ -19,6 +19,7 @@ const CategoryButtons = () => {
 
     const getFilterProducts = async (filter) => {
         try {
+            setFilter(filter)
             const data = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/filterProducts/${filter}`);
             const response = await data.json();
             setProducts(response.products);

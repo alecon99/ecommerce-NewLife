@@ -8,9 +8,11 @@ const CategoryButtons = () => {
 
     const { setProducts, getProducts } = useContext(ProductsProvider);
 
+    const [ filter, setFilter ] = useState(null)
     const [reset, setReset] = useState(false);
 
     const resetFilters = () => {
+        setFilter(null)
         setReset(false);
         getProducts();
     }

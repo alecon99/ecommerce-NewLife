@@ -9,7 +9,7 @@ const SingleCardRecommended = ({ productProps }) => {
 
   return (
     <Link to={`/detail/${productProps._id}`} target='_blank'>
-      <Card className='border-0 my-3' onClick={detail}>
+      <Card className='border-0 my-3'>
         <div id='container_recommended_img' className='border'>
           {productProps.availability ?
             null

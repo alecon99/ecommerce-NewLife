@@ -9,7 +9,7 @@ const SingleCard = ({ productProps }) => {
 
   return (
     <Link className='text-decoration-none' to={`/detail/${productProps._id}`}>
-      <Card className='border-0 my-3' onClick={detail}>
+      <Card className='border-0 my-3'>
         <div id='container_img' className='border'>
           {productProps.availability ?
             null

@@ -41,80 +41,82 @@ const Checkout = () => {
     }, [])
 
     return (
-        <Row id='checkout_container'>
-            <CheckoutProducts
-                shippingCost={shippingCost}
-            />
-            <Col md={6} className='padding_top_100 px-5 pb-4'>
-                <div className='d-flex justify-content-around mb-4'>
-                    <div className='text-center'>
-                        <FontAwesomeIcon icon={faCircleCheck} className='fs-3' />
-                        <div className='info_checkout'>Cart</div>
-                    </div>
-                    <div className='text-center'>
-                        {checkoutPage === 'info' ?
-                            <FontAwesomeIcon icon={faCircleDot} beat className='fs-3' />
-                            :
-                            null
-                        }
-                        {checkoutPage === 'shipping' || checkoutPage === 'pay' ?
+        <div className='overflow-hidden'>
+            <Row id='checkout_container'>
+                <CheckoutProducts
+                    shippingCost={shippingCost}
+                />
+                <Col md={6} className='padding_top_100 px-5 pb-4'>
+                    <div className='d-flex justify-content-around mb-4'>
+                        <div className='text-center'>
                             <FontAwesomeIcon icon={faCircleCheck} className='fs-3' />
-                            :
-                            null
-                        }
-                        <div className='info_checkout'>Info</div>
+                            <div className='info_checkout'>Cart</div>
+                        </div>
+                        <div className='text-center'>
+                            {checkoutPage === 'info' ?
+                                <FontAwesomeIcon icon={faCircleDot} beat className='fs-3' />
+                                :
+                                null
+                            }
+                            {checkoutPage === 'shipping' || checkoutPage === 'pay' ?
+                                <FontAwesomeIcon icon={faCircleCheck} className='fs-3' />
+                                :
+                                null
+                            }
+                            <div className='info_checkout'>Info</div>
+                        </div>
+                        <div className='text-center'>
+                            {checkoutPage === 'info' ?
+                                <FontAwesomeIcon icon={faCircle} className='fs-3' />
+                                :
+                                null
+                            }
+                            {checkoutPage === 'shipping' ?
+                                <FontAwesomeIcon icon={faCircleDot} beat className='fs-3' />
+                                :
+                                null
+                            }
+                            {checkoutPage === 'pay' ?
+                                <FontAwesomeIcon icon={faCircleCheck} className='fs-3' />
+                                :
+                                null
+                            }
+                            <div className='info_checkout'>Shipping</div>
+                        </div>
+                        <div className='text-center'>
+                            {checkoutPage === 'pay' ?
+                                <FontAwesomeIcon icon={faCircleDot} beat className='fs-3' />
+                                :
+                                null
+                            }
+                            {checkoutPage === 'shipping' || checkoutPage === 'info' ?
+                                <FontAwesomeIcon icon={faCircle} className='fs-3' />
+                                :
+                                null
+                            }
+                            <div className='info_checkout'>Pay</div>
+                        </div>
                     </div>
-                    <div className='text-center'>
-                        {checkoutPage === 'info' ?
-                            <FontAwesomeIcon icon={faCircle} className='fs-3' />
-                            :
-                            null
-                        }
-                        {checkoutPage === 'shipping' ?
-                            <FontAwesomeIcon icon={faCircleDot} beat className='fs-3' />
-                            :
-                            null
-                        }
-                        {checkoutPage === 'pay' ?
-                            <FontAwesomeIcon icon={faCircleCheck} className='fs-3' />
-                            :
-                            null
-                        }
-                        <div className='info_checkout'>Shipping</div>
+                    <div>
+                        <CheckoutInfo
+                            checkoutPage={checkoutPage}
+                            setCheckoutPage={setCheckoutPage}
+                        />
+                        <CheckoutShipping
+                            checkoutPage={checkoutPage}
+                            setCheckoutPage={setCheckoutPage}
+                            shippingCost={shippingCost}
+                            setShippingCost={setShippingCost}
+                        />
+                        <CheckoutPay
+                            checkoutPage={checkoutPage}
+                            setCheckoutPage={setCheckoutPage}
+                            shippingCost={shippingCost}
+                        />
                     </div>
-                    <div className='text-center'>
-                        {checkoutPage === 'pay' ?
-                            <FontAwesomeIcon icon={faCircleDot} beat className='fs-3' />
-                            :
-                            null
-                        }
-                        {checkoutPage === 'shipping' || checkoutPage === 'info' ?
-                            <FontAwesomeIcon icon={faCircle} className='fs-3' />
-                            :
-                            null
-                        }
-                        <div className='info_checkout'>Pay</div>
-                    </div>
-                </div>
-                <div>
-                    <CheckoutInfo
-                        checkoutPage={checkoutPage}
-                        setCheckoutPage={setCheckoutPage}
-                    />
-                    <CheckoutShipping
-                        checkoutPage={checkoutPage}
-                        setCheckoutPage={setCheckoutPage}
-                        shippingCost={shippingCost}
-                        setShippingCost={setShippingCost}
-                    />
-                    <CheckoutPay
-                        checkoutPage={checkoutPage}
-                        setCheckoutPage={setCheckoutPage}
-                        shippingCost={shippingCost}
-                    />
-                </div>
-            </Col>
-        </Row>
+                </Col>
+            </Row>
+        </div>
     )
 }
 

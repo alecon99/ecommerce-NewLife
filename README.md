@@ -3,7 +3,7 @@
 
 ## Funzionalità
 L'e-commerce ha una pagina principale e una dettaglio accessibile a tutti gli utenti, effettuando la registrazione è possibile creare un propio carrello prodotti ed effettuare acquisti.
-Soltando gli utenti abilitati come amministratori possono gestire i prodotti, utenti ed ordini.
+Soltando gli utenti abilitati come amministratori possono gestire prodotti, utenti ed ordini.
 
 # Sviluppo
 

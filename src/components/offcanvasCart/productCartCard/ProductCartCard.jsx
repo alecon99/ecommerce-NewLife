@@ -1,5 +1,5 @@
 import { useEffect, useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 import { CartProvider } from '../../../context/CartContext';
 
@@ -7,6 +7,7 @@ import DeleteCartButton from '../../buttons/deleteCartButton/DeleteCartButton';
 
 const ProductCartCard = () => {
 
+    const navigate = useNavigate()
     const { setShow, cartProducts, getCartProducts } = useContext(CartProvider);
 
     useEffect(() => {
@@ -16,7 +17,13 @@ const ProductCartCard = () => {
     return (
         <div>
             {cartProducts && cartProducts.map((product) => {
-                
+
+                const navigateToProduct = () => {
+                    navigate(`/detail/${product.product.id}`)
+                    window.location.reload()
+                    setShow(false)
+                }
+
                 return (
                     <div className=' d-flex justify-content-between align-items-center border-bottom py-2' key={product._id} >
                         <div className='d-flex'>
@@ -24,12 +31,12 @@ const ProductCartCard = () => {
                                 <div className='bg-secondary text-white notification_badge'>{product.quantity}</div>
                                 <img className='round_image' src={product.product.img} alt={product.product.name} />
                             </div>
-                            <Link to={`/detail/${product.product.id}`} target='_blank' onClick={()=> setShow(false)} className='text-decoration-none text-black hover_link ms-3'>
+                            <div onClick={navigateToProduct} className='hover_link ms-3'>
                                 <div>{product.product.name}</div>
                                 <div className='d-flex justify-content-between'>
                                     <div>€ {product.product.price}</div>
                                 </div>
-                            </Link>
+                            </div>
                         </div>
                         <div className='fs-4 px-2'>
                             <DeleteCartButton cartId={product._id} />

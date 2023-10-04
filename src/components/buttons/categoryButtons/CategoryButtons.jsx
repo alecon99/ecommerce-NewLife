@@ -6,7 +6,7 @@ import { Button } from 'react-bootstrap'
 
 const CategoryButtons = () => {
 
-    const { setProducts, getProducts } = useContext(ProductsProvider);
+    const { setPartialProductsCounter, setProducts, getProducts } = useContext(ProductsProvider);
 
     const [ filter, setFilter ] = useState(null)
     const [reset, setReset] = useState(false);
@@ -23,6 +23,7 @@ const CategoryButtons = () => {
             const data = await fetch(`${process.env.REACT_APP_SERVER_BASE_URL}/filterProducts/${filter}`);
             const response = await data.json();
             setProducts(response.products);
+            setPartialProductsCounter(response.counter)
             setReset(true);
         } catch (error) {
             console.log(error);

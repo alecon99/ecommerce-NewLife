@@ -22,7 +22,7 @@ const Cards = () => {
             <Row >
                 {products && products.map((product) => {
                     return (
-                        <Col key={product._id} xs={12} sm={6} md={4} lg={3}>
+                        <Col key={product._id} xs={6} sm={6} md={4} lg={3}>
                             <SingleCard
                                 productProps={product}
                             />

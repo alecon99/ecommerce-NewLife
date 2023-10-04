@@ -96,7 +96,7 @@ const CardDetail = () => {
                       <div className='text-center fs-5'>
                         <div>To add to cart</div>
                         <div className='d-flex justify-content-center'>
-                          <Link className='green text-decoration-none text-black mx-1 fw-bold' to={'/login'} >Register</Link>
+                          <Link className='green text-decoration-none text-black mx-1 fw-bold' to={'/registration'} >Register</Link>
                           <div className='mx-1'>or</div>
                           <Link className='green text-decoration-none text-black fw-bold' to={'/login'} >Log in</Link>
                         </div>

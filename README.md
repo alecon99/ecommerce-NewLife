@@ -1,5 +1,5 @@
 # NewLife e-commerce project 🛒
-> il progetto consiste nella realizazione di un e-commerce per la vendita di prodotti ecosostenibili.
+> il progetto consiste nella realizzazione di un e-commerce per la vendita di prodotti ecosostenibili.
 
 ## Funzionalità
 L'e-commerce ha una pagina principale e una dettaglio accessibile a tutti gli utenti, effettuando la registrazione è possibile creare un propio carrello prodotti ed effettuare acquisti.
